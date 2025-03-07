@@ -1,0 +1,19 @@
+# Arduino compiled files
+*.hex
+*.elf
+*.bin
+*.eep
+*.o
+*.d
+
+# Arduino libraries
+/libraries/
+
+# Build folders
+/build/
+
+# MacOS files
+.DS_Store
+
+# Windows files
+Thumbs.db
