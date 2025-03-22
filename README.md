@@ -1,150 +1,125 @@
-🎯 Ping Pong Turret - Arduino Project
+# 🎯 Ping Pong Turret – Arduino Project
 
-🚀 Overview
+A fun and precise **Arduino-powered automated turret** that detects, loads, and fires ping pong balls using servos, stepper motors, and a manual aiming system.
 
-The Ping Pong Turret is an Arduino-powered automated turret designed to detect and launch ping pong balls at a target. It integrates a stepper motor, servo motors, and rotating shooter mechanism to ensure precision aiming and controlled firing. A rotary encoder is used for manual control of aiming, while a digital potentiometer button initiates the shooting sequence.
+---
 
-🔧 Features
+## 🚀 Overview
 
-🏹 Manual Aiming System (Rotary Encoder + Servo)
+The Ping Pong Turret combines electronics and mechanics to deliver a functional launcher system:
 
-⚙️ Motorized Firing Mechanism (Stepper + DC motors)
+- Rotary encoder for **manual aiming**
+- Servo-based **ball loading**
+- Stepper motor for **ball positioning**
+- Dual DC motors for **controlled shooting**
 
-🎯 Precise Stepper Motor Control
+---
 
-🛠 Servo-Based Ball Loading & Firing
+## 🔧 Features
 
-🔄 Adjustable Firing Speed & Direction
+- 🏹 **Manual Aiming System** (Rotary Encoder + Servo)  
+- ⚙️ **Motorized Firing Mechanism** (Stepper + DC Motors)  
+- 🎯 **Precise Stepper Motor Control**  
+- 🛠 **Servo-Based Ball Loading & Firing**  
+- 🔄 **Adjustable Firing Speed & Direction**  
 
-📦 Components Used
+---
 
-Component
+## 📦 Components Used
 
-Quantity
+| Component                          | Quantity    |
+|-----------------------------------|-------------|
+| Arduino Board (Uno/Nano)          | 1           |
+| Servo Motors (SG90/MG995)         | 2           |
+| Stepper Motor (28BYJ-48) + ULN2003| 1           |
+| Rotary Encoder                    | 1           |
+| Digital Potentiometer (with Button)| 1          |
+| DC Motors for Shooting            | 2           |
+| Power Supply (Battery Pack)       | 1           |
+| Wires & Connectors                | As needed   |
 
-Arduino Board (Uno/Nano)
+---
 
-1
+## 🏗️ Circuit Connections
 
-Servo Motors (SG90/MG995)
+### Stepper Motor (28BYJ-48 + ULN2003 Driver)
 
-2
+- IN1 → D8  
+- IN2 → D10  
+- IN3 → D9  
+- IN4 → D11  
 
-Stepper Motor (28BYJ-48) + ULN2003 Driver
+### Servo Motors
 
-1
+- Aiming Servo → D6  
+- Loader Servo → D7  
 
-Rotary Encoder
+### Rotary Encoder
 
-1
+- CLK → A0  
+- DT → A1  
 
-Digital Potentiometer (with Button)
+### Digital Potentiometer Button
 
-1
+- SW → A2  
 
-DC Motors for Shooting
+### DC Motors for Shooting
 
-2
+- Motor 1 → D2 & D3  
+- Motor 2 → D4 & D5  
 
-Power Supply (Battery Pack)
+---
 
-1
+## 🎮 Controls & Functionality
 
-Wires & Connectors
+### 1️⃣ Manual Aiming
 
-As needed
+- Turn the **rotary encoder** left/right to adjust turret aim  
+- Angle is displayed via the **Serial Monitor**
 
-🏗️ Circuit Connections
+### 2️⃣ Shooting Sequence
 
-Stepper Motor (28BYJ-48) + ULN2003 Driver
+- Press the **potentiometer button** to initiate the firing sequence:
+  - Stepper motor rotates to load a ball
+  - Firing motors engage
+  - Servo pushes ball into the launcher
+  - Stepper returns to reload position
+  - Repeats 3× for burst fire
 
-IN1 → D8
+---
 
-IN2 → D10
+## ⚙️ How to Upload & Run
 
-IN3 → D9
+1. Install **Arduino IDE** and required libraries:
+   - `Stepper.h`
+   - `Servo.h`
+2. Connect your Arduino via USB
+3. Upload the sketch
+4. Power motors separately (recommended)
+5. Use the encoder to aim, and press the button to shoot!
 
-IN4 → D11
+---
 
-Servo Motors
+## 🛠 Code Breakdown
 
-Aiming Servo → D6
+- `Stepper` → Ball positioning  
+- `Servo` → Aiming & loader movement  
+- `DC Motors` → Firing mechanism  
+- `Rotary Encoder` → Manual aim control  
+- `Potentiometer Button` → Initiates firing sequence  
 
-Rotating Loader Servo → D7
+---
 
-Rotary Encoder
+## 📜 License
 
-CLK → A0
+This project is licensed under the **MIT License** – see the [LICENSE](LICENSE) file for details.
 
-DT  → A1
+---
 
-Digital Potentiometer Button
+## 🤝 Contributing
 
-SW  → A2
+Feel free to fork, improve, and submit pull requests. Contributions are welcome!
 
-Shooting DC Motors
+---
 
-Motor 1: D2 & D3
-
-Motor 2: D4 & D5
-
-🎮 Controls & Functionality
-
-1️⃣ Manual Aiming (Rotary Encoder + Servo)
-
-Turning the rotary encoder left/right adjusts the turret's aim angle.
-
-Angle is displayed in the Serial Monitor.
-
-2️⃣ Shooting Mechanism
-
-Pressing the digital potentiometer button initiates a ball loading & firing sequence.
-
-The stepper motor rotates to load a ball.
-
-The firing motors engage for precise shooting.
-
-A servo moves to push the ball into the launcher.
-
-The stepper rotates back for reloading.
-
-This process repeats 3 times for rapid firing.
-
-🚀 How to Upload & Run
-
-Install the Arduino IDE & required libraries:
-
-Stepper.h
-
-Servo.h
-
-Connect the Arduino to your PC via USB.
-
-Upload the Sketch to the board.
-
-Power the motors separately (recommended).
-
-Use the encoder to aim & press the potentiometer button to shoot!
-
-🛠️ Code Breakdown
-
-Stepper Motor Control → Adjusts ball positioning before shooting.
-
-Servo Control → Aims & rotates the loading system.
-
-DC Motors → Engages the shooting mechanism.
-
-Rotary Encoder → Provides manual aiming functionality.
-
-Digital Potentiometer Button → Triggers the full shooting sequence.
-
-📜 License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
-
-🤝 Contributing
-
-Want to improve this project? Feel free to fork, modify, and submit pull requests!
-
-🚀 Built with Arduino for fun & precision! 🏹
-
+> 🚀 **Built with Arduino for fun & precision!** 🏹
